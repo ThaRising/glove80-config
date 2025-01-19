@@ -57,6 +57,14 @@
             bindings
                 = <&rgb_ug RGB_STATUS>;
         };
+        ctrl_shift: ctrl_shift {
+            label = "CTRL_SHIFT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL &kp LSHFT>,
+                      <&macro_pause_for_release>,
+                      <&macro_release &kp LCTRL &kp LSHFT>;
+        };
     };
 };
 
@@ -185,6 +193,15 @@
             tapping-term-ms = <125>;
             require-prior-idle-ms = <100>;
             flavor = "tap-preferred";
+        };
+
+        ctrl_shift_key: ctrl_shift_key {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CTRL_SHIFT_KEY";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&ctrl_shift>, <&kp>;
         };
     };
 };
