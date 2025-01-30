@@ -192,7 +192,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <135>;
             require-prior-idle-ms = <150>;
-            quick-tap-ms = <250>;
             flavor = "tap-preferred";
         };
 
@@ -334,7 +333,7 @@
  &trans     &trans     &trans    &trans    &trans      &trans                                                        &trans     &trans      &trans     &trans     &trans  &trans
  &trans   &kp EXCL     &kp AT  &kp LBRC  &kp RBRC    &kp PIPE                                                       &kp DEL  &kp KP_N7   &kp KP_N8  &kp KP_N9   &kp STAR  &trans
  &trans   &kp HASH   &kp DLLR  &kp LPAR  &kp RPAR   &kp GRAVE                                                     &kp COMMA  &kp KP_N4   &kp KP_N5  &kp KP_N6   &kp PLUS  &trans
- &trans  &kp PRCNT  &kp CARET  &kp LBKT  &kp RBKT  &kp TILDE2  &trans  &trans   &to 0  &trans     &trans  &trans   &kp AMPS  &kp KP_N1   &kp KP_N2  &kp KP_N3   &kp BSLH  &trans
+ &trans  &kp PRCNT  &kp CARET  &kp LBKT  &kp RBKT  &kp TILDE2  &trans  &trans   &to 0  &trans     &trans  &trans   &kp AMPS  &kp KP_N1   &kp KP_N2  &kp KP_N3   &kp BSLH  &kp KP_NUM
  &trans     &trans     &trans    &trans    &trans              &trans  &trans  &trans  &trans  &kp LSHFT  &trans             &kp KP_N0  &kp KP_DOT  &kp KP_N0  &kp EQUAL  &trans
             >;
         };
