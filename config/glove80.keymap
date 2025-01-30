@@ -19,6 +19,10 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 
+/* Unicode / German-Umlaut support */
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/unicode-chars/german.dtsi"
+
 /* Automatically generated layer name #define */
 #define LAYER_Base 0
 #define LAYER_Lower 1
@@ -203,6 +207,14 @@
             flavor = "tap-preferred";
             bindings = <&ctrl_shift>, <&kp>;
         };
+
+        a_umlaut: a_umlaut {
+            compatible = "zmk,behavior-mod-morph";
+            label = "A_UMLAUT";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&de_ae>;
+            mods = <(MOD_LALT)>;
+        };
     };
 };
 
@@ -321,7 +333,7 @@
    &kp DEL     &kp F2    &kp F3  &kp F4  &kp LG(L)                                                                                   &kp LG(SPACE)     &kp F7     &kp F8     &kp F9       &kp F10
  &kp EQUAL     &kp N1    &kp N2  &kp N3     &kp N4  &kp N5                                                                   &kp N6         &kp N7     &kp N8     &kp N9     &kp N0      &kp BSLH
    &kp TAB      &kp Q     &kp W   &kp F      &kp P   &kp B                                                                    &kp J          &kp L      &kp U      &kp Y   &kp SEMI     &kp MINUS
-   &kp ESC      &kp A     &kp R   &kp S      &kp T   &kp G                                                                    &kp M          &kp N      &kp E      &kp I      &kp O       &kp SQT
+   &kp ESC      &a_umlaut     &kp R   &kp S      &kp T   &kp G                                                                    &kp M          &kp N      &kp E      &kp I      &kp O       &kp SQT
  &kp GRAVE      &ctrl_shift_key 0 Z     &kp X   &kp C      &kp D   &kp V         &kp LALT  &kp LALT    &none   &trans  &kp LALT   &kp RET   &kp K          &kp H  &kp COMMA    &kp DOT   &kp FSLH     &kp LSHFT
  &kp LSHFT  &kp LCTRL  &kp DOWN  &kp UP   &kp LGUI          &magic_space LSHFT SPACE    &lower  &kp TAB  &kp TAB     &sl 1  &kp BSPC               &kp LGUI   &kp LEFT  &kp RIGHT  &kp LCTRL  &mt END HOME
             >;
